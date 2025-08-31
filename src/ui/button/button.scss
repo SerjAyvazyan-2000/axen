@@ -1,0 +1,45 @@
+@use "../../assets/scss/mixin";
+@use "../../assets/scss/variables";
+
+.button-gradient {
+  padding: 8px 32px;
+  height: 62px;
+  border-radius: 16px;
+  font-weight: 800;
+  border: 1px solid;
+  border: 1px solid transparent;
+  background: linear-gradient(
+    106.81deg,
+    #7c3aed 0%,
+    #8f8cff 47.6%,
+    #2563eb 100%
+  );
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: variables.$whiteOriginal;
+  box-shadow: 0px 8px 32px -4px #7c3aed26;
+  box-shadow: 0px 6px 32.1px 1px #b68cff;
+}
+
+.button-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: conic-gradient(
+    from 223.72deg at 20% 50%,
+    #5ed4ff 0deg,
+    #cc81ff 0.04deg,
+    #ffd445 20.77deg,
+    #5ed4ff 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}

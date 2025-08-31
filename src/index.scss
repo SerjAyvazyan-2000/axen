@@ -1,0 +1,107 @@
+@use "./assets/scss/flex";
+@use "./assets/scss/normalize";
+@use "./assets/scss/mixin";
+@use "./assets/scss/variables";
+@import "assets/icons/icon.css";
+
+#root {
+  height: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.site-decor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.container {
+  max-width: 1256px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container-big {
+  max-width: 1273px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.text-wrap {
+  display: block;
+}
+.mobile-text-wrap{
+  @include mixin.screen-max-width-576 {
+    display: block;
+  }
+}
+
+.section {
+  padding: 42px 0;
+  margin-top: 80px;
+
+  @include mixin.screen-max-width-767 {
+    padding: 0 0 42px 0;
+    margin-top: 38px;
+  }
+}
+.section-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  color: variables.$whiteOriginal;
+
+  @include mixin.screen-max-width-767 {
+    font-size: 40px;
+  }
+}
+.section-sub-title {
+  color: variables.$white3;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 28px;
+  margin-top: 24px;
+  @include mixin.screen-max-width-767 {
+    font-size: 18px;
+  }
+}
+
+.mobile-block {
+  display: none;
+  @include mixin.screen-max-width-767 {
+    display: block;
+  }
+}
+
+.desktop-block {
+  display: flex;
+  @include mixin.screen-max-width-767 {
+    display: none;
+  }
+}
+
+.img-mobile {
+  display: none;
+  @include mixin.screen-max-width-576 {
+    display: block;
+  }
+}
+
+.img-desktop {
+  display: flex;
+  @include mixin.screen-max-width-576 {
+    display: none;
+  }
+}

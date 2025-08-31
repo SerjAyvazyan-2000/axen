@@ -1,0 +1,358 @@
+@use "../../assets/scss/mixin";
+@use "../../assets/scss/variables";
+
+header {
+  padding: 26px 0;
+  background: linear-gradient(180deg, #101213 80.77%, rgba(16, 18, 19, 0) 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  @include mixin.screen-max-width-767 {
+    padding: 24px 0;
+  }
+}
+.header-logo {
+  @include mixin.screen-max-width-991 {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.header-body {
+  padding: 11px 0;
+  gap: 20px;
+  justify-content: space-between;
+
+  @include mixin.screen-max-width-767 {
+    gap: 28px;
+    justify-content: unset;
+  }
+}
+
+.header-nav-menu {
+  transition: 0.4s;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    li {
+      a {
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 16px;
+        line-height: 24px;
+        color: variables.$white;
+        background: transparent;
+
+        &.active {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+            0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1),
+            0 0 40px rgba(255, 255, 255, 1);
+        }
+      }
+    }
+
+    @include mixin.screen-max-width-991 {
+      gap: 40px;
+      flex-direction: column;
+      margin-bottom: 20px;
+      align-items: self-start;
+    }
+  }
+
+  @include mixin.screen-max-width-991 {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    background: #101213;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+      top: 0;
+    }
+  }
+}
+
+.header-nav-wrapper{
+
+    @include mixin.screen-max-width-991 {
+  
+    height: 100%;
+    padding: 111px 32px 46px 32px;
+    overflow: auto;
+  
+
+  }
+} 
+
+
+
+
+.burger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  span,
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: variables.$whiteOriginal;
+    opacity: 0.5;
+    border-radius: 3px;
+    transition: 0.3s ease;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &.active {
+    span {
+      opacity: 0;
+    }
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+  }
+
+  @include mixin.screen-max-width-991 {
+    display: flex;
+  }
+}
+
+.header-actions {
+  gap: 24px;
+}
+.header-login {
+  padding: 8px 32px;
+  height: 42px;
+  border: 1px solid transparent;
+  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+    linear-gradient(106.81deg, #7c3aed 0%, #2563eb 100%) border-box;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: variables.$white;
+
+  @include mixin.screen-max-width-767 {
+    margin-left: unset;
+    margin-bottom: 30px;
+    max-width: max-content;
+  }
+  @include mixin.screen-max-width-576 {
+    max-width: 100%;
+  }
+}
+
+.header-register {
+  padding: 8px 32px;
+  height: 42px;
+  border-radius: 16px;
+  font-weight: 600;
+  border: 1px solid;
+  border: 1px solid transparent;
+  background: linear-gradient(
+    106.81deg,
+    #7c3aed 0%,
+    #8f8cff 47.6%,
+    #2563eb 100%
+  );
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: variables.$white;
+  box-shadow: 0px 6px 32.1px 1px #b68cff;
+
+  @include mixin.screen-max-width-767 {
+    margin-left: auto;
+  }
+}
+
+.header-register::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: conic-gradient(
+    from 223.72deg at 20% 50%,
+    #5ed4ff 0deg,
+    #cc81ff 0.04deg,
+    #ffd445 20.77deg,
+    #5ed4ff 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+.header-languages-wrapper {
+  position: relative;
+
+  @include mixin.screen-max-width-767 {
+    margin-top: auto;
+    max-width: max-content;
+  }
+}
+.language-mobile-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: variables.$white;
+  margin-bottom: 16px;
+}
+
+.header-languages {
+  border: 1px solid variables.$gray;
+  position: relative;
+  gap: 6px;
+  padding: 9px 19px 9px 15px;
+  border-radius: 16px;
+  height: 42px;
+  z-index: 2;
+  overflow: hidden;
+  cursor: pointer;
+
+  &.open {
+    i {
+      transform: rotate(180deg);
+    }
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: variables.$white;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    -webkit-filter: blur(10px);
+  }
+
+  i {
+    font-size: 10px;
+    background: variables.$white2;
+    transition: 0.4s;
+  }
+}
+.language-flag {
+  max-width: 18px;
+  width: 100%;
+  height: 18px;
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+.sub-languages-block {
+  padding: 16px 21px;
+  background: linear-gradient(
+      0deg,
+      rgba(13, 17, 23, 0.95),
+      rgba(13, 17, 23, 0.95)
+    ),
+    linear-gradient(0deg, #0b0c10, #0b0c10);
+  border: 1px solid #6c73ff;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  gap: 16px;
+  position: absolute;
+  top: 50px;
+  left: -20px;
+  width: max-content;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+
+  &.active {
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
+
+    
+  @include mixin.screen-max-width-767 {
+      top:90px;
+  }
+  }
+}
+
+.sub-languages {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  p {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 18px;
+    text-align: center;
+    color: variables.$white;
+  }
+  &.active {
+    p {
+      color: variables.$blue2;
+    }
+  }
+}
+.sub-language-flag {
+  max-width: 18px;
+  width: 100%;
+  height: 24px;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
