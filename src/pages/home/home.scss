@@ -179,6 +179,7 @@
   top: 229px;
   right: -89px;
   height: 551px;
+  z-index: -1;
 
   @include mixin.screen-max-width-991 {
     position: initial;

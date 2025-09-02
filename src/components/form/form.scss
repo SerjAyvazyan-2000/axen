@@ -214,11 +214,12 @@
 }
 
 .email-input {
-  margin-top: 20px;
-
   @include mixin.screen-max-width-576 {
     margin-top: 20px;
   }
+
+
+
 }
 
 .form-textarea {
