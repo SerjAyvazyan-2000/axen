@@ -58,6 +58,10 @@ header {
         text-decoration: none;
         transition: color 0.3s ease;
 
+        @include mixin.screen-max-width-767 {
+          font-size: 24px;
+        }
+
         &::after {
           content: "";
           position: absolute;
@@ -209,6 +213,7 @@ header {
   }
   @include mixin.screen-max-width-576 {
     max-width: 100%;
+    height: 56px;
   }
 }
 
@@ -220,7 +225,7 @@ header {
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: variables.$white;
+  color: variables.$whiteOriginal;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -246,7 +251,6 @@ header {
       0 0 16px rgba(37, 99, 235, 0.5);
 
     &::before {
-      animation: rotateBorder 3s linear infinite;
       filter: brightness(1.2);
     }
   }
@@ -254,6 +258,9 @@ header {
   &:active {
     transform: scale(0.97);
     box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+  }
+  @include mixin.screen-max-width-576 {
+    color: variables.$whiteOriginal;
   }
 }
 
@@ -275,15 +282,6 @@ header {
   mask-composite: exclude;
   z-index: -1;
   transition: filter 0.3s ease;
-}
-
-@keyframes rotateBorder {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .header-languages-wrapper {
@@ -384,20 +382,25 @@ header {
     visibility: visible;
 
     @include mixin.screen-max-width-767 {
-      top: 90px;
+      top: -230px;
     }
   }
-
   @include mixin.screen-max-width-767 {
-    display: none;
-    max-height: 2000px;
-    opacity: 1;
-    visibility: visible;
+    top: -180px;
 
-    &.active {
-      display: flex;
-    }
+    
   }
+
+  // @include mixin.screen-max-width-767 {
+
+  //   max-height: 2000px;
+  //   opacity: 1;
+  //   visibility: visible;
+
+  //   &.active {
+  //     display: flex;
+  //   }
+  // }
 }
 
 .sub-languages {

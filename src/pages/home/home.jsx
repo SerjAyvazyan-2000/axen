@@ -4,7 +4,7 @@ import "./home.scss";
 import Form from "../../components/form/form";
 
 const Home = () => {
-  const [activeFaq, setActiveFaq] = useState(0);
+  const [activeFaq, setActiveFaq] = useState(null);
 
   const benefitsItems = [
     {
@@ -87,32 +87,32 @@ const Home = () => {
       title: "How quickly can we integrate and go live?",
       subText:
         "Most of our partners have a basic exchange operational within a single business day. Our SDKs and dedicated integration support streamline the entire process.",
+        id:1
     },
     {
       title: "Do we need to handle regulatory compliance?",
+         id:2,
       subText:
         "You focus on your brand and customers. We provide the secure, compliant trading infrastructure. We recommend consulting with legal experts for your specific jurisdiction.",
     },
 
     {
       title: "What level of support can we expect?",
+         id:3,
       subText:
         "You get 24/7 technical support for your users and a direct line to your dedicated account manager for strategic business discussions.",
     },
     {
       title: "Is the solution completely white-label?",
+         id:4,
       subText:
         "Absolutely. Your users will interact solely with your brand. Our technology operates entirely behind the scenes, powering your exchange seamlessly.",
     },
   ];
 
-  const handleActiveFaq = (index) => {
-    if (activeFaq !== index) {
-      setActiveFaq(index);
-    } else {
-      setActiveFaq(-1);
-    }
-  };
+const handleActiveFaq = (index) => {
+  setActiveFaq(activeFaq === index ? null : index);
+};
 
   return (
     <>
@@ -387,7 +387,7 @@ const Home = () => {
           <div className="faq-items G-flex-column">
             {faqList.map((item, index) => {
               return (
-                <div key={index}
+                <div  key={item.id} 
                   onClick={() => handleActiveFaq(index)}
                   className={`faq-item ${activeFaq === index ? "active" : ""}`}
                 >
@@ -397,7 +397,7 @@ const Home = () => {
                   </div>
 
                   <div className={`faq-sub-text`}>
-                    <p>{item.subText}</p>
+                    {item.subText}
                   </div>
                 </div>
               );

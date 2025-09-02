@@ -539,10 +539,10 @@
 .faq-sub-text {
   max-height: 0;
   opacity: 0;
+    overflow: hidden;       
+  visibility: hidden;
   transition: all 0.4s;
-
-  p {
-    font-weight: 400;
+       font-weight: 400;
     font-size: 18px;
     line-height: 26px;
     background: linear-gradient(0deg, #94a3b8, #a9c6ef);
@@ -550,7 +550,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-  }
 }
 
 #faq {
@@ -581,6 +580,7 @@
       margin-top: 16px;
       max-height: 1000px;
       opacity: 1;
+       visibility: visible; 
     }
     .icon-arrowDown {
       transform: rotate(180deg);
