@@ -9,15 +9,21 @@ header {
   top: 0;
   width: 100%;
   z-index: 10;
+  transition: 0.3s;
 
   @include mixin.screen-max-width-767 {
     padding: 24px 0;
+  }
+
+  &.moved {
+    padding: 10px 0;
   }
 }
 .header-logo {
   @include mixin.screen-max-width-991 {
     position: relative;
     z-index: 2;
+    flex: 1 1 auto;
   }
 }
 
@@ -39,19 +45,43 @@ header {
     display: flex;
     align-items: center;
     gap: 32px;
+
     li {
       a {
+        position: relative;
         font-weight: 500;
-        font-style: Medium;
+        font-style: normal;
         font-size: 16px;
         line-height: 24px;
         color: variables.$white;
         background: transparent;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 0;
+          height: 2px;
+          border-radius: 2px;
+          background: linear-gradient(90deg, #7c3aed, #2563eb);
+          transition: width 0.4s ease;
+        }
+
+        &:hover {
+          color: variables.$whiteOriginal;
+          text-shadow: 0 4px 12px rgba(124, 58, 237, 0.6);
+
+          &::after {
+            width: 100%;
+          }
+        }
 
         &.active {
-          text-shadow: 0 0 10px rgba(255, 255, 255, 1),
-            0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1),
-            0 0 40px rgba(255, 255, 255, 1);
+          color: variables.$whiteOriginal;
+          text-shadow: 0 6px 10px #fffffff0;
         }
       }
     }
@@ -80,20 +110,13 @@ header {
   }
 }
 
-.header-nav-wrapper{
-
-    @include mixin.screen-max-width-991 {
-  
+.header-nav-wrapper {
+  @include mixin.screen-max-width-991 {
     height: 100%;
     padding: 111px 32px 46px 32px;
     overflow: auto;
-  
-
   }
-} 
-
-
-
+}
 
 .burger {
   width: 24px;
@@ -166,6 +189,18 @@ header {
   line-height: 24px;
   text-align: center;
   color: variables.$white;
+  transition: all 0.4s ease;
+
+  &:hover {
+    background: linear-gradient(106.81deg, #2b2b2b, #1f1f1f) padding-box,
+      linear-gradient(106.81deg, #8f5bff 0%, #3b82f6 100%) border-box;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.6),
+      0 0 24px rgba(37, 99, 235, 0.5);
+
+    text-shadow: 0 0 8px rgba(124, 58, 237, 0.7),
+      0 0 16px rgba(37, 99, 235, 0.6);
+  }
 
   @include mixin.screen-max-width-767 {
     margin-left: unset;
@@ -182,26 +217,43 @@ header {
   height: 42px;
   border-radius: 16px;
   font-weight: 600;
-  border: 1px solid;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: variables.$white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   border: 1px solid transparent;
+
   background: linear-gradient(
     106.81deg,
     #7c3aed 0%,
     #8f8cff 47.6%,
     #2563eb 100%
   );
-  z-index: 1;
-  overflow: hidden;
-  position: relative;
 
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  color: variables.$white;
-  box-shadow: 0px 6px 32.1px 1px #b68cff;
+  box-shadow: 0px 6px 32.1px 1px rgba(182, 140, 255, 0.5);
 
-  @include mixin.screen-max-width-767 {
-    margin-left: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6),
+      0 0 40px rgba(37, 99, 235, 0.5);
+    color: #fff;
+    text-shadow: 0 0 8px rgba(124, 58, 237, 0.6),
+      0 0 16px rgba(37, 99, 235, 0.5);
+
+    &::before {
+      animation: rotateBorder 3s linear infinite;
+      filter: brightness(1.2);
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
   }
 }
 
@@ -210,7 +262,7 @@ header {
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  padding: 1px;
+  padding: 0.8px;
   background: conic-gradient(
     from 223.72deg at 20% 50%,
     #5ed4ff 0deg,
@@ -222,7 +274,18 @@ header {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
+  transition: filter 0.3s ease;
 }
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .header-languages-wrapper {
   position: relative;
 
@@ -320,10 +383,20 @@ header {
     opacity: 1;
     visibility: visible;
 
-    
-  @include mixin.screen-max-width-767 {
-      top:90px;
+    @include mixin.screen-max-width-767 {
+      top: 90px;
+    }
   }
+
+  @include mixin.screen-max-width-767 {
+    display: none;
+    max-height: 2000px;
+    opacity: 1;
+    visibility: visible;
+
+    &.active {
+      display: flex;
+    }
   }
 }
 

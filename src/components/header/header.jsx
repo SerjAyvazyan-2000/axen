@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import "./header.scss";
 import { Link, NavLink, useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const [changeLan, setChangeLan] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [active, setActive] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
     {
@@ -19,15 +20,20 @@ const Header = () => {
       name: "Affiliate",
       to: "/affiliate",
     },
-    {
-      name: "FAQ",
-      to: "/faq",
-    },
-    {
-      name: "Contact us",
-      to: "/contact",
-    },
+    { name: "FAQ", to: "/#faq" },
+    { name: "Contact us", to: "/#contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const languages = [
     { code: "ru", name: "Русский", icon: "./ru.png" },
@@ -45,6 +51,14 @@ const Header = () => {
     setActive(!active);
   };
 
+  useEffect(() => {
+    if (active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [active]);
+
   const handleActive = (index) => {
     if (activeIndex !== index) {
       setActiveIndex(index);
@@ -54,7 +68,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className={`${scrolled ? "moved" : ""}`}>
       <div className="container">
         <div className="header-body G-align-center">
           <Link className="header-logo G-flex" to={"/"}>
@@ -64,26 +78,72 @@ const Header = () => {
           {navItems.length ? (
             <>
               <nav className={`header-nav-menu ${active ? "active" : ""}`}>
-                
                 <div className="header-nav-wrapper G-flex-column">
-
                   <button className="header-login mobile-block">Sign in</button>
 
                   <ul>
-                    {navItems.map((item, index) => {
-                      return (
-                        <li key={index}>
-                          <NavLink
-                            className={`${
-                              location?.pathname === item.to ? "active" : ""
-                            }`}
-                            to={item.to}
-                          >
-                            {item.name}
-                          </NavLink>
-                        </li>
-                      );
-                    })}
+                    <li>
+                      <NavLink
+                        className={`${
+                          location?.pathname === "/" ? "active" : ""
+                        }`}
+                        to={"/"}
+                        onClick={() => {
+                          if (window.innerWidth <= 991) {
+                            setActive(false);
+                          }
+                        }}
+                      >
+                        Home
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <NavLink
+                        className={`${
+                          location?.pathname === "/affiliate" ? "active" : ""
+                        }`}
+                        to={"/affiliate"}
+                        onClick={() => {
+                          if (window.innerWidth <= 991) {
+                            setActive(false);
+                          }
+                        }}
+                      >
+                        Affiliate
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <a
+                        href="#faq"
+                        onClick={(e) => {
+                          if (window.innerWidth <= 991) {
+                            setActive(false);
+                          }
+
+                          if (location.pathname === "/") {
+                            return;
+                          } else {
+                            navigate("/#faq");
+                          }
+                        }}
+                      >
+                        FAQ
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#contact"
+                        onClick={() => {
+                          if (window.innerWidth <= 991) {
+                            setActive(false);
+                          }
+                        }}
+                      >
+                        Contact us
+                      </a>
+                    </li>
                   </ul>
 
                   <div className="header-languages-wrapper mobile-block">
@@ -122,10 +182,7 @@ const Header = () => {
                       ))}
                     </div>
                   </div>
-
-
                 </div>
-
               </nav>
             </>
           ) : null}

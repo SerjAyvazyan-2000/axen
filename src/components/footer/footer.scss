@@ -8,9 +8,8 @@ footer {
 
   @include mixin.screen-max-width-576 {
     margin-top: 38px;
-    padding: 47px 0 32px 0;
+    padding: 34px 0 32px 0;
     background: #101213;
-
   }
 }
 .footer-body {
@@ -43,8 +42,8 @@ footer {
     @include mixin.screen-max-width-576 {
       font-size: 20px;
       color: variables.$whiteOriginal;
-      opacity: .6;
-       line-height: 24px;
+      opacity: 0.6;
+      line-height: 24px;
     }
   }
 }
@@ -81,6 +80,33 @@ footer {
         font-size: 16px;
         line-height: 24px;
         color: variables.$white4;
+        position: relative;
+        transition: color 0.3s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 0;
+          height: 2px;
+          border-radius: 2px;
+          background: linear-gradient(90deg, #7c3aed, #2563eb);
+          transition: width 0.4s ease;
+        }
+
+        &:hover {
+          color: variables.$whiteOriginal;
+          text-shadow: 0 4px 12px rgba(124, 58, 237, 0.6);
+
+          &::after {
+            width: 100%;
+          }
+        }
+
+        @include mixin.screen-max-width-576 {
+          color: variables.$blueviolet-light;
+        }
       }
     }
   }
@@ -90,6 +116,20 @@ footer {
   gap: 16px;
   a {
     color: variables.$blueviolet-light;
+    transition: color 0.3s ease;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+
+    @include mixin.screen-max-width-576 {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      color: variables.$whiteOriginal;
+      text-shadow: 0 4px 12px rgba(124, 58, 237, 0.6);
+    }
   }
 
   @include mixin.screen-max-width-991 {

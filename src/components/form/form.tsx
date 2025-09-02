@@ -1,18 +1,18 @@
 import Button from "../../ui/button/button";
 import "./form.scss";
 
-const Form = () => {
+const Form = ({ title ,text ,buttonText,classTitles}) => {
   return (
-    <section className="form-section section section">
+    <section className="form-section section section" id="contact">
       <div className="container-big">
         <div className="form-body G-flex">
           <div className="form-description">
-
-            <div className="form-titles desktop-block">
+            <div className={`form-titles desktop-block ${classTitles}`}>
               <h2>
-                Ready to get <span>Axen</span> with us?
+            
+                {title}
               </h2>
-              <p>Join hundreds of companies already building with Axen.pw</p>
+              <p>{text}</p>
             </div>
 
             <div className="form-texts ">
@@ -32,7 +32,7 @@ const Form = () => {
                 </label>
               </div>
 
-              <div className="form-input">
+              <div className="form-input email-input">
                 <label>
                   <span>
                     Email <b>*</b>
@@ -72,16 +72,17 @@ const Form = () => {
             </div>
 
             <div className="form-btn">
-                <Button text={'Start Integration'}/>
+              <Button text={buttonText} />
             </div>
           </form>
 
-                  <div className="form-titles mobile-block">
-              <h2>
-                Ready to get <b className="mobile-text-wrap"><span>Axen</span> with us?</b>
-              </h2>
-              <p>Join hundreds of companies already building with Axen.pw</p>
-            </div>
+          <div className={`form-titles mobile-block ${classTitles}`}>
+            <h2>
+          
+                {title}
+            </h2>
+            <p>{text}</p>
+          </div>
         </div>
       </div>
 

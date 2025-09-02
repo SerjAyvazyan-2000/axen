@@ -126,7 +126,7 @@ const Home = () => {
               </div>
 
               <h1 className="hero-title">
-                Enterprise{" "}
+                Enterprise
                 <span className="text-wrap">Crypto Exchange API</span>
               </h1>
               <p className="hero-sub-title">
@@ -377,7 +377,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="faq-section section">
+      <section id="faq" className="faq-section section">
         <div className="container-big">
           <h2 className="section-title">FAQ</h2>
           <p className="section-sub-title">
@@ -403,10 +403,11 @@ const Home = () => {
               );
             })}
           </div>
+          
         </div>
       </section>
 
-      <Form />
+      <Form  title={<>Ready to get <span>Axen</span> with us?</>} buttonText={'Start Integration'}  text={'Join hundreds of companies already building with Axen.pw'}/>
     </>
   );
 };

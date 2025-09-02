@@ -28,7 +28,7 @@
   @include mixin.screen-max-width-576 {
     width: 100%;
     bottom: unset;
-    top: -10px;
+    top: -70px;
 
     img {
       width: 100%;
@@ -119,6 +119,7 @@
   gap: 8px;
   max-width: max-content;
   margin-bottom: 32px;
+  background: #27272759;
 
   span {
     width: 8px;
@@ -134,7 +135,7 @@
     color: variables.$white;
   }
   @include mixin.screen-max-width-767 {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
 }
 
@@ -143,8 +144,16 @@
   font-size: 61px;
   line-height: 72px;
   text-align: start;
-  color: variables.$white;
+  color: variables.$whiteOriginal;
   margin-bottom: 24px;
+
+  span{
+    background: linear-gradient(94.59deg, #F8FAFC 0%, #CBD5E1 100%);
+    -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+  }
 
   @include mixin.screen-max-width-767 {
     font-size: 33px;
@@ -156,8 +165,11 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
-  color: variables.$white;
+  color: variables.$white3;
   margin-bottom: 48px;
+    @include mixin.screen-max-width-767 {
+     font-size: 20px;
+  }
 }
 
 .hero-code-img {
@@ -182,6 +194,8 @@
   @include mixin.screen-max-width-576 {
   }
 }
+
+
 .benefits-section {
   position: relative;
   z-index: 2;
@@ -224,6 +238,7 @@
     line-height: 32px;
     color: variables.$whiteOriginal;
     margin-top: 16px;
+    max-width: 1100px;
   }
 }
 .advantages-section {
@@ -347,6 +362,7 @@
 .building-item {
   gap: 16px;
 }
+
 .b-item-number {
   font-weight: 700;
   font-size: 14px;
@@ -429,6 +445,10 @@
   @include mixin.screen-max-width-767 {
     margin-top: 38px;
     padding: 0 0 42px 0;
+
+    .section-title {
+      font-size: 34px;
+    }
   }
 }
 .why-section-bg {
@@ -436,6 +456,14 @@
   z-index: -1;
   top: 0;
   right: 0;
+
+
+   @include mixin.screen-max-width-576 {
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
 }
 .why-choose-btn {
   button {
@@ -505,11 +533,37 @@
 .faq-section .section-sub-title {
   font-size: 24px;
 }
+
+
+.faq-sub-text {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s;
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    background: linear-gradient(0deg, #94a3b8, #a9c6ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+#faq {
+  scroll-margin-top: 100px;
+}
+#contact {
+  scroll-margin-top: 100px;
+}
+
 .faq-item {
   padding: 0 0 32px 0;
   border-bottom: 1px solid transparent;
   border-image: conic-gradient(
-      from 223.72deg at 50% 50%,
+      from 223.72deg at 10% 50%,
       #5ed4ff 0deg,
       #cc81ff 0.04deg,
       #ffd445 20.77deg,
@@ -519,12 +573,13 @@
     1;
   cursor: pointer;
 
+  
+
   &.active {
     .faq-sub-text {
       margin-top: 16px;
       max-height: 1000px;
       opacity: 1;
-      visibility: visible;
     }
     .icon-arrowDown {
       transform: rotate(180deg);
@@ -540,6 +595,11 @@
     font-size: 24px;
     line-height: 32px;
     color: variables.$whiteOriginal;
+
+    
+  @include mixin.screen-max-width-991 {
+        font-weight: 800;
+  }
   }
 
   i {
@@ -549,21 +609,7 @@
     transition: 0.4s;
     flex: 0 0 12px;
   }
-}
-.faq-sub-text {
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s;
 
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 26px;
-    background: linear-gradient(0deg, #94a3b8, #a9c6ef);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
+
+
 }

@@ -4,6 +4,12 @@
 .form-section {
   position: relative;
   z-index: 2;
+
+  @include mixin.screen-max-width-576 {
+    .container-big {
+      padding: 0 10px;
+    }
+  }
 }
 .form-bg {
   position: absolute;
@@ -28,6 +34,11 @@
 }
 .form-titles {
   flex-direction: column;
+
+  @include mixin.screen-max-width-576 {
+    padding: 0 10px;
+  }
+
   h2 {
     font-weight: 900;
     font-size: 64px;
@@ -62,6 +73,31 @@
     max-width: 417px;
   }
 }
+.a-form-titles {
+  h2 {
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 135%;
+    color: variables.$whiteOriginal;
+
+    @include mixin.screen-max-width-576 {
+      font-size: 34px;
+    }
+  }
+  p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: variables.$white3;
+    margin-top: 24px;
+    max-width: 417px;
+
+    @include mixin.screen-max-width-576 {
+      font-size: 20px;
+    }
+  }
+}
+
 .form-texts {
   margin-top: 32px;
   p {
@@ -69,6 +105,7 @@
     font-size: 24px;
     line-height: 135%;
     color: variables.$white3;
+    margin-bottom: 6px;
   }
   a {
     font-weight: 600;
@@ -77,8 +114,8 @@
     color: variables.$blueviolet-light;
   }
   @include mixin.screen-max-width-576 {
-     margin-top: 0;
-    }
+    margin-top: 0;
+  }
 }
 
 .form {
@@ -102,6 +139,17 @@
 
   @include mixin.screen-max-width-576 {
     padding: 33px 23px;
+
+    background: linear-gradient(335.8deg, #08090a 35.63%, #21173f 111.43%)
+        padding-box,
+      conic-gradient(
+          from 123.72deg at 120% 20%,
+          #cc81ff 0deg,
+          #5ed4ff 28.62deg,
+          #ffd445 265.3deg,
+          #cc81ff 160deg
+        )
+        border-box;
   }
 }
 .form-inputs {
@@ -162,6 +210,14 @@
         border: 1px solid variables.$green;
       }
     }
+  }
+}
+
+.email-input {
+  margin-top: 20px;
+
+  @include mixin.screen-max-width-576 {
+    margin-top: 20px;
   }
 }
 
