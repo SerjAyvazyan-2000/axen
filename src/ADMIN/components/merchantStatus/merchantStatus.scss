@@ -1,0 +1,79 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+.merchant-status {
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
+
+  &__btn {
+    padding: 0 8px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+    color: variables.$white11;
+
+    i {
+      font-size: 9px;
+      background: variables.$white11;
+      transition: 0.3s;
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 6px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    list-style: none;
+    padding: 6px 0;
+    min-width: 160px;
+    z-index: 10;
+  }
+
+  &__option {
+    padding: 8px 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background: #2a2a2a;
+    }
+  }
+
+  &.open .merchant-status__menu {
+    display: block;
+  }
+  &.open i {
+    transform: rotate(180deg);
+  }
+
+  &__btn--active {
+    background: #15c06e;
+
+  
+  }
+  &__btn--wait {
+    background: #ffb020;
+  }
+  &__btn--inactive {
+    color: #ffffff99;
+    background: #4d525b;
+  }
+  &__btn--blocked {
+    background: #ef4444;
+  }
+}

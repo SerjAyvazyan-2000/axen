@@ -1,21 +1,100 @@
 @charset "UTF-8";
 
 .icon {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-    mask-size: contain;
-    -webkit-mask-size: contain;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: center;
-    -webkit-mask-position: center;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
 }
-.icon-arrowDown{
-    mask-image: url(arrowDown.svg);
-    -webkit-mask-image: url(arrowDown.svg);
+.icon-arrowDown {
+  mask-image: url(arrowDown.svg);
+  -webkit-mask-image: url(arrowDown.svg);
 }
-.icon-check{
-    mask-image: url(check.svg);
-    -webkit-mask-image: url(check.svg);
+.icon-check {
+  mask-image: url(check.svg);
+  -webkit-mask-image: url(check.svg);
+}
+.icon-arrowLeft {
+  mask-image: url(arrowLeft.svg);
+  -webkit-mask-image: url(arrowLeft.svg);
+}
+.icon-arrowLeft2{
+    mask-image: url(arrowLeft2.svg);
+  -webkit-mask-image: url(arrowLeft2.svg);
+}
+.icon-iconEyeClose {
+  mask-image: url(iconEyeClose.svg);
+  -webkit-mask-image: url(iconEyeClose.svg);
+}
+.icon-iconCopy {
+  mask-image: url(IconCopy.svg);
+  -webkit-mask-image: url(IconCopy.svg);
+}
+.icon-home {
+  mask-image: url(home.svg);
+  -webkit-mask-image: url(home.svg);
+}
+
+.icon-dolar {
+  mask-image: url(iconDolar.svg);
+  -webkit-mask-image: url(iconDolar.svg);
+}
+.icon-statistics{
+      mask-image: url(statistics.svg);
+  -webkit-mask-image: url(statistics.svg);
+}
+.icon-history{
+         mask-image: url(history.svg);
+  -webkit-mask-image: url(history.svg);
+}
+.icon-integration{
+        mask-image: url(Integration.svg);
+  -webkit-mask-image: url(Integration.svg);
+}
+.icon-arrowDown2{
+           mask-image: url(arrowDown2.svg);
+  -webkit-mask-image: url(arrowDown2.svg);
+}
+.icon-iconBackward{
+         mask-image: url(iconBackward.svg);
+  -webkit-mask-image: url(iconBackward.svg);
+}
+.icon-search{
+           mask-image: url(search.svg);
+  -webkit-mask-image: url(search.svg);
+}
+
+.icon-users{
+           mask-image: url(users.svg);
+  -webkit-mask-image: url(users.svg);
+}
+.icon-settings{
+             mask-image: url(settings.svg);
+  -webkit-mask-image: url(settings.svg);
+}
+.icon-logout{
+               mask-image: url(logout.svg);
+  -webkit-mask-image: url(logout.svg);
+}
+.icon-iconPlus{
+           mask-image: url(iconPlus.svg);
+  -webkit-mask-image: url(iconPlus.svg);
+}
+
+.icon-edit{
+           mask-image: url(edit.svg);
+  -webkit-mask-image: url(edit.svg);
+}
+.icon-download{
+           mask-image: url(download.svg);
+  -webkit-mask-image: url(download.svg);
+} 
+.icon-edit{
+        mask-image: url(edit.svg);
+  -webkit-mask-image: url(edit.svg);
 }

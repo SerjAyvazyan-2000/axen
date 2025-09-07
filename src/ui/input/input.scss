@@ -1,0 +1,87 @@
+@use "../../assets/scss/mixin";
+@use "../../assets/scss/variables";
+
+.input-wrapper{
+width: 100%;
+  &.error {
+   input{
+     border: 1px solid variables.$red3;
+   }
+  }
+}
+
+.input-label{
+  width: 100%;
+  position: relative;
+
+  input{
+    width: 100%;
+  }
+}
+.gray-input {
+  gap: 8px;
+
+  span {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    b {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      color: variables.$red2;
+    }
+  }
+
+  input {
+    height: 47px;
+    background: variables.$black2;
+    border: 1px solid variables.$white8;
+    border-radius: 12px;
+    padding: 5px 12px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white9;
+    transition: 0.4s;
+
+    &:focus {
+      border: 1px solid variables.$green;
+    }
+  }
+
+  .icon-iconEyeClose{
+    font-size: 22px;
+    background: variables.$whiteOriginal;
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+    cursor: pointer;
+
+  }
+  .icon-edit{
+       font-size: 18px;
+    background: variables.$whiteOriginal;
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
+    cursor: pointer;
+  }
+  
+  
+}
+
+
+
+.error-text{
+font-weight: 400;
+font-size: 12px;
+line-height: 150%;
+color: variables.$red3;
+
+}

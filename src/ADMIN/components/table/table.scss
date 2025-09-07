@@ -1,0 +1,101 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.table-row {
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid variables.$white8;
+  border-top: 1px solid variables.$white8;
+}
+.table-cell--time {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: variables.$gray8;
+}
+.table-cell--merchant {
+  min-width: 196px;
+
+  .table-merchant {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: variables.$white11;
+  }
+  .table-uuid {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    color: variables.$white2;
+    margin-top: 4px;
+  }
+  @include mixin.screen-max-width-1400{
+  min-width: 120px;
+}
+}
+
+.table-cell--pair {
+font-weight: 400;
+font-size: 12px;
+line-height: 140%;
+color: variables.$white11;
+min-width: 179px;
+
+@include mixin.screen-max-width-1400{
+  min-width: 100px;
+}
+
+}
+.history-table{
+  .table-cell--status{
+    margin-left: 20%;
+  }
+}
+.statistic-table{
+  .table-cell--status{
+    margin-left: 20%;
+  }
+}
+
+.table-cell--status{
+  padding: 0 8px;
+font-weight: 600;
+font-size: 12px;
+line-height: 24px;
+text-transform: uppercase;
+color: variables.$white11;
+border-radius: 50px;
+
+
+
+  &.status--paid{
+    background: variables.$green3;
+  
+  }
+  &.status--wait{
+    background: variables.$orange;
+
+  }
+
+}
+
+.table-cell--amount{
+  margin-left: auto;
+
+  p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    color: variables.$white11;
+    text-align: end;
+  }
+  span{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    color: variables.$white2;
+    margin-top: 4px;
+    display: block;
+    text-align: end;
+  }
+}

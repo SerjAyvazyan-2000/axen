@@ -1,0 +1,170 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.exchange-dashboard-header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.exchange-dashboard-period {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: variables.$white2;
+  }
+}
+.exchange-dashboard-earned {
+  gap: 10px;
+
+  p {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 150%;
+    color: variables.$white11;
+  }
+}
+
+.exchange-withdraw {
+  padding: 10px 24px 10px 20px;
+  background: variables.$primary;
+  gap: 7px;
+  max-width: max-content;
+  border-radius: 16px;
+  height: 40px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  span {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 100%;
+    text-align: center;
+    color: variables.$whiteOriginal;
+  }
+
+  i {
+    font-size: 12px;
+    background: variables.$whiteOriginal;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    background: lighten(variables.$primary, 8%);
+    transform: translateY(-2px);
+
+    i {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.exchange-dashboard-content {
+  margin-top: 36px;
+}
+
+.exchange-dashboard-exchanges {
+  margin-top: 16px;
+  gap: 16px;
+
+  @include mixin.screen-max-width-1200 {
+    flex-direction: column;
+  }
+}
+.e-dashboard-list {
+  width: 100%;
+}
+.e-dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 124%;
+    color: variables.$white11;
+  }
+
+  button {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 9px;
+      background: variables.$blue3;
+      transition: all 0.3s ease;
+    }
+    span {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+      text-align: center;
+      color: variables.$blue3;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+
+      span {
+        color: variables.$green3;
+      }
+
+      i {
+        transform: rotate(45deg);
+        background: variables.$green3;
+      }
+    }
+  }
+}
+
+.e-dashboard-table {
+  margin-top: 16px;
+}
+.e-dashboard-merchants {
+  max-width: 265px;
+  width: 100%;
+  @include mixin.screen-max-width-1200 {
+    max-width: 100%;
+  }
+}
+
+.merchants-items {
+  margin-top: 16px;
+  padding: 16px 0 0;
+  border-top: 1px solid variables.$white8;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.merchant-item {
+  padding: 27px 25px;
+  background: variables.$black2;
+  border-radius: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.m-item-titles {
+  h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: variables.$white11;
+  }
+  a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: variables.$white2;
+    margin-top: 2px;
+    display: block;
+  }
+}

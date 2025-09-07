@@ -1,0 +1,63 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+
+.exchange-dashboard-stats {
+  gap: 25px;
+}
+.exchange-dashboard-stat {
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: variables.$white2;
+  }
+  span {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 150%;
+  }
+  &:nth-child(1) {
+    span {
+      background: linear-gradient(0deg, #f2c94c, #f2c94c);
+      display: block;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &:nth-child(2) {
+    span {
+      background: linear-gradient(0deg, #1696df, #1696df);
+      display: block;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &:nth-child(3) {
+    span {
+      background: linear-gradient(0deg, #12b47e, #12b47e);
+      display: block;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &:nth-child(4) {
+    span {
+      background: linear-gradient(0deg, #12b47e, #12b47e);
+      display: block;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}

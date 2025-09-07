@@ -1,0 +1,69 @@
+@use "../../assets/scss/mixin";
+@use "../../assets/scss/variables";
+
+.textarea{
+
+  &.error {
+   textarea{
+     border: 1px solid variables.$red3;
+   }
+  }
+}
+
+.gray-textarea {
+  gap: 8px;
+  position: relative;
+
+  span {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    b {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      color: variables.$red2;
+    }
+  }
+
+  textarea {
+    height: 145px;
+    background: variables.$black2;
+    border: 1px solid variables.$white8;
+    border-radius: 12px;
+    padding: 5px 12px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white9;
+    transition: 0.4s;
+    resize: none;
+
+    &:focus {
+      border: 1px solid variables.$green;
+    }
+  }
+
+  i{
+    font-size: 22px;
+    background: variables.$white10;
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+    cursor: pointer;
+
+  }
+}
+
+.error-text{
+font-weight: 400;
+font-size: 12px;
+line-height: 150%;
+color: variables.$red3;
+
+}

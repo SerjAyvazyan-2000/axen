@@ -1,0 +1,33 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.search-block {
+  width: 100%;
+  position: relative;
+  input {
+    border-radius: 12px;
+    border: 1px solid variables.$gray7;
+    border-radius: 12px;
+    padding: 8px 18px 8px 46px;
+    background: variables.$black2;
+    height: 48px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: variables.$whiteOriginal;
+    transition: 0.4s;
+
+    &:focus {
+      border: 1px solid variables.$green;
+    }
+  }
+  i {
+    font-size: 14px;
+    background: variables.$white12;
+    position: absolute;
+    left: 21px;
+    top: 16px;
+    cursor: pointer;
+  }
+}

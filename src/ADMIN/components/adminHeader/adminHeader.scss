@@ -1,0 +1,39 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.admin-header {
+  padding: 24px 0;
+  align-items: center;
+  margin-bottom: 36px;
+}
+.admin-balance {
+  padding: 8px 8px 8px 18px;
+  border-radius: 23px;
+  background: variables.$black2;
+  gap: 12px;
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: variables.$white2;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: variables.$white9;
+  }
+}
+.share-icon {
+    background: variables.$gray6;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+  i {
+    font-size: 16px;
+    background: variables.$whiteOriginal;
+    transform: rotate(140deg);
+  }
+}

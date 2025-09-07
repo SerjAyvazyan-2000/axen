@@ -1,0 +1,153 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.c-success-titles {
+  h3 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 124%;
+    color: variables.$green3;
+  }
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white2;
+  }
+}
+
+.c-error-titles {
+  h3 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 124%;
+    color: variables.$red4;
+  }
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white2;
+  }
+}
+
+.conclusion-status-cnt {
+  margin-top: 36px;
+  max-width: 460px;
+  width: 100%;
+
+  button {
+    margin-top: 36px;
+    max-width: 166px;
+    width: 100%;
+    color: variables.$white13;
+  }
+}
+.c-success-rows {
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.c-success-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: variables.$white11;
+  }
+  span {
+    color: variables.$blue3;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+.c-success-total {
+  padding: 13px 0 0;
+  border-top: 1px solid #ffffff33;
+}
+
+.c-success-total {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: variables.$white11;
+  }
+  span {
+    color: variables.$green3;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.c-error-rows {
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.c-error-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: variables.$white11;
+  }
+  span {
+    color: variables.$red4;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  b {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: variables.$white11;
+  }
+}
+.c-error-tags {
+  gap: 12px;
+  p {
+        font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: variables.$white11;
+  }
+  ul {
+    li {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: variables.$white2;
+      margin-left: 20px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: variables.$white2;
+      }
+
+      a{
+        color: variables.$blue3;
+      }
+    }
+  }
+}

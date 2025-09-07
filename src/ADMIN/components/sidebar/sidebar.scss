@@ -1,0 +1,208 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.sidebar-block {
+  padding: 24px 16px;
+  position: relative;
+  z-index: 2;
+  max-width: 216px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+  }
+}
+
+.sidebar-menu {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    li {
+      a {
+        padding: 13px 15px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          color: variables.$white2;
+          line-height: 124%;
+          transition: all 0.3s ease;
+        }
+
+        i {
+          transition: transform 0.3s ease, all 0.3s ease;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+
+          span {
+            color: variables.$white11;
+          }
+
+          i {
+            transform: scale(1.2);
+          }
+        }
+      }
+      .aqua-item {
+        i {
+          background: #3dadff;
+          font-size: 18px;
+        }
+
+        &.active {
+          background: #3dadff33;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+      .yellow-item {
+        i {
+          background: #a6ee43;
+          font-size: 22px;
+        }
+
+        &.active {
+          background: #a6ee4333;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+      .orange-item {
+        i {
+          background: #eea743;
+          font-size: 20px;
+        }
+
+        &.active {
+          background: #eea74333;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+
+      .gray-item {
+        i {
+          background: #e6e6e6;
+          font-size: 20px;
+        }
+
+        &.active {
+          background: #fafafa33;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+      .blue-item {
+        i {
+          background: #3187f8;
+          font-size: 20px;
+        }
+        &.active {
+          background: #3187f833;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar-tolls {
+  margin-top: auto;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    li {
+      a {
+        padding: 13px 15px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-radius: 16px;
+        cursor: pointer;
+
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          color: variables.$white2;
+          line-height: 124%;
+        }
+        i {
+          background: variables.$white2;
+          font-size: 22px;
+          transition: transform 0.3s ease, all 0.3s ease;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+
+          span {
+            color: variables.$white11;
+          }
+
+          i {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .aqua-item {
+        i {
+          background: #e6e6e6;
+          font-size: 22px;
+        }
+
+        &.active {
+          background: #3dadff33;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+
+      .gray-item {
+        i {
+          background: #e6e6e6;
+          font-size: 20px;
+        }
+
+        &.active {
+          background: #fafafa33;
+          span {
+            color: variables.$white11;
+          }
+        }
+      }
+    }
+  }
+}

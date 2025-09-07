@@ -1,0 +1,85 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.conclusion-dashboard-earned {
+  gap: 10px;
+
+  p {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 150%;
+    color: variables.$white11;
+  }
+}
+
+.conclusion-dashboard-period {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: variables.$white2;
+  }
+}
+.conclusion-add-tolls {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.method-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: variables.$white2;
+  margin-bottom: 8px;
+}
+
+.c-method-dropdown {
+  max-width: 131px;
+  width: 100%;
+  background: #22272b;
+  border: 1px solid #ffffff33;
+  padding: 10px 12px;
+  border-radius: 12px 0 0 12px;
+}
+.c-method-input {
+  max-width: 440px;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 0 12px 12px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    background: variables.$black2;
+    border: 1px solid variables.$white8;
+    color: variables.$white2;
+    border-left: none;
+
+    &::placeholder {
+      color: variables.$white10;
+    }
+  }
+}
+.conclusion-amount-tolls{
+  gap: 12px;
+}
+.c-amount-input{
+  max-width: 392px;
+  width: 100%;
+}
+.c-amount-button{
+  max-width: 166px;
+  width: 100%;
+  button{
+    height: 48px;
+    font-size: 18px;
+    box-shadow: unset;
+   width: 100%;
+  }
+}

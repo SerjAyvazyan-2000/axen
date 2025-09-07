@@ -1,0 +1,196 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.authorization-section {
+  margin-top: 82px;
+  margin-bottom: 60px;
+}
+.authorization-body {
+  margin-top: 64px;
+}
+
+.authorization-container {
+  max-width: 364px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.a-form-input-inputs {
+  gap: 20px;
+  margin-top: 38px;
+}
+.a-back-link {
+  gap: 9px;
+    transition: .3s;
+
+  i {
+    font-size: 14px;
+    background: variables.$blue3;
+    transition: .3s;
+  }
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 124%;
+    color: variables.$blue3;
+        transition: .3s;
+
+  }
+
+  &:hover{
+    i{
+    background: variables.$green3;
+
+    }
+    span{
+    color: variables.$green3;
+
+    }
+  }
+}
+.a-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: variables.$whiteOriginal;
+  margin-top: 5px;
+}
+.authorization-actions {
+  margin-top: 38px;
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: variables.$white3;
+    margin-top: 12px;
+
+    a {
+      color: variables.$blue3;
+    }
+  }
+}
+
+.authorization-btn {
+  button {
+    width: 100%;
+    height: 48px;
+  }
+}
+.authentication-container {
+  max-width: 691px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.authentication-cnt {
+  gap: 41px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.authentication-media {
+  max-width: 278px;
+  width: 100%;
+}
+.authentication-body {
+  margin-top: 52px;
+}
+.authentication-cnt {
+  margin-top: 12px;
+}
+.authentication-qr {
+  margin-top: 16px;
+  max-width: 278px;
+  width: 100%;
+  height: 278px;
+}
+.authentication-qr img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.a-copy-tools {
+  margin-top: 16px;
+  gap: 14px;
+  justify-content: center;
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: variables.$white11;
+  }
+  i {
+    background: variables.$whiteOriginal;
+    opacity: 0.6;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+.authentication-info {
+  max-width: 352px;
+  width: 100%;
+}
+.authentication-info h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  color: variables.$whiteOriginal;
+}
+.a-info-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.a-info-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.a-info-text p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: variables.$white2;
+}
+.a-email-input {
+  margin-top: 12px;
+}
+
+.resend-code {
+  margin-top: 8px;
+}
+.resend-code p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: variables.$white10;
+}
+.resend-code p span {
+  color: variables.$white9;
+}
+.authentication-btn {
+  margin-top: 38px;
+  width: 100%;
+}
+.authentication-btn button {
+  width: 100%;
+  height: 48px;
+}
+
+.authenticator-inputs {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.authenticator-inputs h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  color: variables.$whiteOriginal;
+}
