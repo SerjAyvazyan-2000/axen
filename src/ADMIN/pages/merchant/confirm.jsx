@@ -90,7 +90,7 @@ const Confirm = () => {
                   onClick={handleCheck}
                   href={false}
                   variant={"primary-btn"}
-                  text={"Check"}
+                  text={"I added tag"}
                 />
               )}
 
