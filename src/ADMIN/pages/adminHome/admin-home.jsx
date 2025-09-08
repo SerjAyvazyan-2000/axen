@@ -5,6 +5,7 @@ import Search from "../../components/search/search";
 import Stats from "../../components/stats/stats";
 import Table from "../../components/table/table";
 import "./admin-home.scss";
+import {Link} from 'react-router-dom'
 
 const AdminHome = () => {
   const data = [
@@ -118,10 +119,10 @@ const AdminHome = () => {
                 />
               </div>
 
-              <button className="exchange-withdraw G-align-center">
+              <Link to="/conclusion" className="exchange-withdraw G-align-center">
                 <i className="icon icon-iconBackward"></i>
                 <span>Withdraw</span>
-              </button>
+              </Link>
             </div>
 
             <Stats items={statsData} />
@@ -136,10 +137,10 @@ const AdminHome = () => {
               <div className="e-dashboard-list">
                 <div className="e-dashboard-header ">
                   <p>Exchanges</p>
-                  <button>
+                  <Link to={'/history'}>
                     <i className="icon icon-iconBackward"></i>
                     <span>View all</span>
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="e-dashboard-table">
@@ -150,10 +151,10 @@ const AdminHome = () => {
               <aside className="e-dashboard-merchants">
                 <div className="e-dashboard-header ">
                   <p>Merchants</p>
-                  <button>
+                  <Link to={'/merchant'}>
                     <i className="icon icon-iconBackward"></i>
                     <span>View all</span>
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="merchants-items">

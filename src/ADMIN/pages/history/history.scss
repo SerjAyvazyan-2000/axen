@@ -4,20 +4,18 @@
 .history-selects {
   gap: 12px;
   margin-top: 48px;
-      max-width: 873px;
-    width: 100%;
-  
+  max-width: 873px;
+  width: 100%;
 }
 
 .history-search {
   margin-top: 36px;
 }
-.history-tolls{
+.history-tolls {
   gap: 18px;
 
-  @include mixin.screen-max-width-1300{
-  flex-wrap: wrap;
-
+  @include mixin.screen-max-width-1300 {
+    flex-wrap: wrap;
   }
 }
 .history-tables {
@@ -40,34 +38,33 @@
   background: variables.$gray10;
   gap: 14px;
   min-width: 220px;
-justify-content: center;
-        transition: all 0.3s ease;
+  justify-content: center;
+  transition: all 0.3s ease;
 
   i {
     font-size: 20px;
     background: variables.$white13;
-        transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
   span {
-font-weight: 400;
-font-size: 18px;
-line-height: 48px;
-text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 48px;
+    text-align: center;
     color: variables.$white13;
     transition: all 0.3s ease;
   }
 
-    &:hover {
+  &:hover {
     background: lighten(variables.$gray10, 5%);
     transform: translateY(-2px);
 
     i {
-      transform: rotate(90deg) scale(1.1); 
-      background: variables.$whiteOriginal;
+      background: variables.$green;
     }
 
     span {
-      color: variables.$whiteOriginal;
+      color: variables.$green;
     }
   }
 }

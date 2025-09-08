@@ -4,8 +4,13 @@
 .table-row {
   gap: 12px;
   padding: 8px 12px;
-  border-bottom: 1px solid variables.$white8;
+
   border-top: 1px solid variables.$white8;
+
+  &:last-child{
+      border-bottom: 1px solid variables.$white8;
+  }
+  
 }
 .table-cell--time {
   font-weight: 500;

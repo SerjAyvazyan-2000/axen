@@ -19,21 +19,22 @@ const Merchant = () => {
           <div className="added-merchant">
             <div className="added-item-titles">
               <h3>BalanceUp</h3>
-              <a
-                target="blank"
-                href="https://perfectdomain.com/domain/balanceup.com"
+              <Link
+                to='/connectedSite'
               >
                 balanceup.com
-              </a>
+              </Link>
             </div>
-            <a
+            <Link
+            to={'/connectedSite'}
               className="m-item-logo"
-              href="https://perfectdomain.com/domain/balanceup.com"
             >
               <img src="./Avatar.svg" alt="" />
-            </a>
+            </Link>
             <MerchantStatus />
           </div>
+
+          
 
             <Link to={"/siteConnect"} className="added-tolls G-center">
               <b className="add-icon G-center">

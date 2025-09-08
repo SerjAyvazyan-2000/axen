@@ -36,7 +36,7 @@ export default function MerchantStatus() {
       </button>
 
       <ul className="merchant-status__menu">
-        {["ACTIVE", "WAIT", "Inactive", "BLOCKED"].map((s) => (
+        {["ACTIVE", "INACTIVE"].map((s) => (
           <li
             key={s}
             className="merchant-status__option"

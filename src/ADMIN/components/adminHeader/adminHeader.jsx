@@ -8,13 +8,13 @@ const AdminHeader = () => {
         <img src="/logo.svg" alt="" />
       </Link>
 
-      <div className="admin-balance G-align-center">
+      <Link to={'/conclusion'} className="admin-balance G-align-center">
          <p>Available</p>
          <h3>$11,230.00</h3>
          <div className="share-icon G-center">
              <i className="icon icon-arrowLeft"></i>
          </div>
-      </div>
+      </Link>
     </div>
   );
 };
