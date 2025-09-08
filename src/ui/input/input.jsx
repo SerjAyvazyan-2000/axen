@@ -12,6 +12,7 @@ const Input = ({
   errorText,
   onChange,
   edit,
+  value
 }) => {
 
 
@@ -33,6 +34,7 @@ const Input = ({
           name={name}
            type={type}
           placeholder={placeholder}
+          value={value}
         />
         {type === "password" &&  <i className="icon icon-iconEyeClose"></i>}
         {edit && <i  className="icon icon-edit"></i>}

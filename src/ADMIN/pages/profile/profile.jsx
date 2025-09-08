@@ -24,6 +24,7 @@ const Profile = () => {
               title={"Email"}
               placeholder="example@mail.com"
               edit={true}
+              value={"example@mail.com"}
             />
 
             <Input
@@ -32,6 +33,7 @@ const Profile = () => {
               title={"Telegram"}
               placeholder="example@mail.com"
               edit={true}
+              value={'example@mail.com'}
             />
 
             <Input
@@ -40,6 +42,7 @@ const Profile = () => {
               title={"Password"}
               placeholder="****************"
               edit={true}
+              value={'****************'}
             />
           </div>
 
