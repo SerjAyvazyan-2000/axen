@@ -100,18 +100,18 @@ const Header = ({ hidenAuthentication }) => {
         },
       ],
     },
-    {
-      title: "Crypto pair",
-      elements: [
-        {
-          name: "Exchange a pair",
-          icon: "icon-exchange",
-          href: "/exchange",
-          iconColor: "i-exchange-color",
-          alsoActive: ["/"],
-        },
-      ],
-    },
+    // {
+    //   title: "Crypto pair",
+    //   elements: [
+    //     {
+    //       name: "Exchange a pair",
+    //       icon: "icon-exchange",
+    //       href: "/exchange",
+    //       iconColor: "i-exchange-color",
+    //       alsoActive: ["/"],
+    //     },
+    //   ],
+    // },
   ];
 
   const handleClick = (index) => {
@@ -141,7 +141,11 @@ const Header = ({ hidenAuthentication }) => {
               <p>Menu</p>
             </div>
 
-            <Link onClick={()=>setActive(false)} className="header-logo G-flex" to={"/"}>
+            <Link
+              onClick={() => setActive(false)}
+              className="header-logo G-flex"
+              to={"/"}
+            >
               <img src="/logo.svg" alt="logo" />
             </Link>
 
@@ -188,27 +192,37 @@ const Header = ({ hidenAuthentication }) => {
                   </div>
                 </div>
                 <ul>
-                  {navitems.map((item, index) => {
-                    const isActive =
-                      location.pathname === item.href ||
-                      (item.alsoActive &&
-                        item.alsoActive.includes(location.pathname));
-                    return (
-                      <li key={index}>
-                        <NavLink
-                          to={item.href}
-                          className={isActive ? "active" : ""}
-                          onClick={() => {
-                            if (window.innerWidth <= 991) {
-                              setActive(false);
-                            }
-                          }}
-                        >
-                          {item.name}
-                        </NavLink>
-                      </li>
-                    );
-                  })}
+                  {navitems
+                    .filter((item) => {
+                      if (
+                        window.innerWidth <= 991 &&
+                        ["API", "Affiliate"].includes(item.name)
+                      ) {
+                        return false;
+                      }
+                      return true;
+                    })
+                    .map((item, index) => {
+                      const isActive =
+                        location.pathname === item.href ||
+                        (item.alsoActive &&
+                          item.alsoActive.includes(location.pathname));
+                      return (
+                        <li key={index}>
+                          <NavLink
+                            to={item.href}
+                            className={isActive ? "active" : ""}
+                            onClick={() => {
+                              if (window.innerWidth <= 991) {
+                                setActive(false);
+                              }
+                            }}
+                          >
+                            {item.name}
+                          </NavLink>
+                        </li>
+                      );
+                    })}
                 </ul>
 
                 <div className="d-menu-items G-flex-column mobile-menu-block">

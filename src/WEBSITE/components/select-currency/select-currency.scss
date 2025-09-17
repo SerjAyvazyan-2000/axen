@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: 2;
-  transition: 0.4s;
+  transition: 0.5s;
   opacity: 0;
   visibility: hidden;
 
@@ -36,6 +36,19 @@
   &.active {
     opacity: 1;
     visibility: visible;
+  }
+
+  @include mixin.screen-max-width-576 {
+    position: fixed;
+    z-index: 10;
+    min-height: 100%;
+    top: 200%;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+    }
   }
 }
 .select-currency-header {
@@ -84,10 +97,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #ffffff59;
     border: 1px solid transparent;
+    color: variables.$white;
 
     transition: 0.4s;
+
+    &::placeholder {
+      color: #ffffff59;
+    }
 
     &:focus {
       border: 1px solid variables.$green;
@@ -188,10 +205,18 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @include mixin.screen-max-width-576 {
+    padding: 0 0 200px 0;
+  }
 }
 .currency-scroll {
   max-height: 400px;
-  overflow-y: auto; 
+  overflow-y: auto;
+
+    @include mixin.screen-max-width-576 {
+     max-height: 100vh;
+  }
   &::-webkit-scrollbar {
     width: 5px;
   }

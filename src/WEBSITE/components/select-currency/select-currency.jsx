@@ -1,36 +1,47 @@
 import { NavLink } from "react-router-dom";
 import "./select-currency.scss";
-import { useState,useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const SelectCurrency = ({currencySections, active, setActive,fromCurrency,toCurrency,setToCurrency,setFromCurrency,selecting}) => {
+const SelectCurrency = ({
+  currencySections,
+  active,
+  setActive,
+  fromCurrency,
+  toCurrency,
+  setToCurrency,
+  setFromCurrency,
+  selecting,
+}) => {
   const filters = ["All", "New", "Gainers", "Losers"];
   const [activeFilter, setActiveFilter] = useState("All");
   const wrapRef = useRef(null);
 
-  console.log(currencySections);
-  
-
-
-   useEffect(() => {
-      function handleClickOutside(e) {
-        if (
-          wrapRef.current &&
-          !wrapRef.current.contains(e.target)
-        ) {
-          setActive(false);
-        }
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) {
+        setActive(false);
       }
-  
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [setActive]);
+    }
 
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setActive]);
 
+  useEffect(() => {
+    if (window.innerWidth < 576 && active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [active]);
 
   return (
-    <div ref={wrapRef} className={`select-currency-block ${active ? "active" : ""}`}>
+    <div
+      ref={wrapRef}
+      className={`select-currency-block ${active ? "active" : ""}`}
+    >
       <div className="select-currency-header">
         <div className="currency-header-info G-align-center">
           <p>Select a currency</p>
@@ -60,19 +71,23 @@ const SelectCurrency = ({currencySections, active, setActive,fromCurrency,toCurr
       <div className="currency-scroll">
         <div className="currency-list">
           {currencySections.map((section, idx) => (
-            <div key={idx}   className="currency-box">
+            <div key={idx} className="currency-box">
               <h3 className="currency-title">{section.title}</h3>
 
               <div className="currency-items">
                 {section.items.map((item, i) => (
-                  <div key={i}  onClick={() => {
-                if (selecting === "send") {
-                  setFromCurrency(item);
-                } else if (selecting === "get") {
-                  setToCurrency(item);
-                }
-                setActive(false); 
-              }} className="currency-item" >
+                  <div
+                    key={i}
+                    onClick={() => {
+                      if (selecting === "send") {
+                        setFromCurrency(item);
+                      } else if (selecting === "get") {
+                        setToCurrency(item);
+                      }
+                      setActive(false);
+                    }}
+                    className="currency-item"
+                  >
                     <div className="currency-left">
                       <div className="currency-icon">
                         <img src={`${item.img}.svg`} alt={item.name} />

@@ -421,7 +421,7 @@ header {
   gap: 16px;
   position: absolute;
   top: 50px;
-  left: -20px;
+  left: -40px;
   width: max-content;
   max-height: 0;
   opacity: 0;
@@ -433,14 +433,13 @@ header {
     opacity: 1;
     visibility: visible;
 
-    @include mixin.screen-max-width-767 {
+  }
+     @include mixin.screen-max-width-767 {
       top: 90px;
       z-index: 10;
+      left: -20px;
     }
-  }
-  @include mixin.screen-max-width-767 {
-    top: 0;
-  }
+
 }
 .mobile-menu-block {
   display: none;

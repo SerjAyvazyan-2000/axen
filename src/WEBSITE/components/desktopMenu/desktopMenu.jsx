@@ -45,19 +45,19 @@ const DesktopMenu = ({ setOpenDesktopMenu, openDesktopMenu, setActive }) => {
         },
       ],
     },
-    {
-      title: "Crypto pair",
-      elements: [
-        {
-          name: "Exchange a pair",
-          icon: "icon-exchange",
-          href: "/exchange",
-          alsoActive: ["/"],
+    // {
+    //   title: "Crypto pair",
+    //   elements: [
+    //     {
+    //       name: "Exchange a pair",
+    //       icon: "icon-exchange",
+    //       href: "/exchange",
+    //       alsoActive: ["/"],
 
-          iconColor: "i-exchange-color",
-        },
-      ],
-    },
+    //       iconColor: "i-exchange-color",
+    //     },
+    //   ],
+    // },
   ];
 
   const handleClick = (index) => {

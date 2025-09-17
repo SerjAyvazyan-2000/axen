@@ -157,6 +157,34 @@ function App() {
   const hideHeader = currentRoute?.hideHeader || false;
   const visibleSidebar = currentRoute?.showSidebar || false;
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="wrapper G-flex-column">
       {!hideHeader && <Header hidenAuthentication={hidenAuthentication} />}
