@@ -98,3 +98,27 @@
         mask-image: url(edit.svg);
   -webkit-mask-image: url(edit.svg);
 }
+.icon-code{
+          mask-image: url(code.svg);
+  -webkit-mask-image: url(code.svg);
+}
+.icon-exchange{
+         mask-image: url(exchange.svg);
+  -webkit-mask-image: url(exchange.svg);
+}
+.icon-repeat{
+         mask-image: url(repeat.svg);
+  -webkit-mask-image: url(repeat.svg);
+}
+.icon-arrowDown3{
+           mask-image: url(arrowDown3.svg);
+  -webkit-mask-image: url(arrowDown3.svg);
+}
+.icon-close{
+             mask-image: url(iconClose.svg);
+  -webkit-mask-image: url(iconClose.svg);
+}
+.icon-search2{
+           mask-image: url(search2.svg);
+  -webkit-mask-image: url(search2.svg);
+}

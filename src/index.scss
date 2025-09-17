@@ -9,15 +9,23 @@
 }
 html {
   scrollbar-gutter: stable;
-}
 
-:root {
-  scrollbar-width: thin;
-  scrollbar-color: #222 #000; 
 }
 
 
 
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #000;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 6px;
+}
 
 
 .wrapper {
@@ -51,6 +59,12 @@ html {
   margin: 0 auto;
   width: 100%;
 }
+.container-small {
+  max-width: 1143px;
+  padding: 0 24px;
+  margin: 0 auto;
+  width: 100%;
+}
 .admin-container {
   width: 100%;
 }
@@ -60,6 +74,12 @@ html {
 .mobile-text-wrap {
   @include mixin.screen-max-width-576 {
     display: block;
+  }
+}
+.desktop-text-wrap {
+    display: block;
+  @include mixin.screen-max-width-576 {
+    display: inline;
   }
 }
 

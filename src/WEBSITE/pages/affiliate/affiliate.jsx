@@ -57,7 +57,6 @@ const Affiliate = () => {
 
   return (
     <>
-      <Breadcrumbs />
       <section className="a-hero-section">
         <div className="container">
           <div className="a-hero-body G-flex">

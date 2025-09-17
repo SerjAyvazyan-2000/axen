@@ -3,10 +3,15 @@
 
 .a-hero-section {
   position: relative;
+    padding: 177px 0 0 ;
   z-index: 2;
   max-width: 3920px;
   width: 100%;
   margin: 0 auto;
+
+    @include mixin.screen-max-width-767 {
+    padding: 206px 0 0;
+  }
 }
 .a-section-bg {
   position: absolute;
@@ -21,7 +26,7 @@
   @include mixin.screen-max-width-576 {
     width: 100%;
     bottom: unset;
-    top: -120px;
+    top: 0;
 
     img {
       width: 100%;
@@ -31,7 +36,6 @@
 .a-hero-body {
   position: relative;
   justify-content: space-between;
-  padding: 35px 0 0 0;
 
   @include mixin.screen-max-width-991 {
     flex-direction: column;
@@ -45,16 +49,13 @@
   width: 100%;
   position: relative;
   z-index: 3;
-  padding: 107px 0 0;
 
   a {
     max-width: 212px;
     width: 100%;
   }
 
-  @include mixin.screen-max-width-767 {
-    padding: 64px 0 0;
-  }
+
 
   @include mixin.screen-max-width-576 {
     a {
@@ -99,7 +100,7 @@
     z-index: 3;
     max-width: 200px;
     bottom: unset;
-    top: -60px;
+    top: -130px;
     right: -60px;
   }
 }

@@ -1,71 +1,66 @@
-
 $blackGradient1: linear-gradient(0deg, #101213, #101213),
-linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
-$whiteOriginal: #FFFFFF;
+$whiteOriginal: #ffffff;
 
-$white:#CBD5E1;
-$white2:#FFFFFF99;
-$white3: #F3F3F3;
-$white4: #94A3B8;
-$white5: #F6FBFD99;
-$white6: #EEF8FB;
-$white7: #AFAFAF;
-$white8:  #FFFFFF33;
+$white: #cbd5e1;
+$white2: #ffffff99;
 
-$white9: #FFFFFFCC;
-$white10: #FFFFFF59;
-$white11: #FAFAFA;
-$white12:  #E3E3E3;
-$white13: #FFFFFFBF;
+$white3: #f3f3f3;
+$white4: #94a3b8;
+$white5: #f6fbfd99;
+$white6: #eef8fb;
+$white7: #afafaf;
+$white8: #ffffff33;
+$white9: #ffffffcc;
+$white10: #ffffff59;
+$white11: #fafafa;
+$white12: #e3e3e3;
+$white13: #ffffffbf;
+$white14: #ffffff8a;
+$white15: #D2CDDB;
 
-
-
-$gray:  #30363D;
-$gray2:  #313131;
-$gray3: #23262A4D;
+$gray: #30363d;
+$gray2: #313131;
+$gray3: #23262a4d;
 $gray4: #101112;
-$gray5:  #FFFFFF1A;
-$gray6: #22272B;
-$gray7: #F6FBFD47;
-$gray8: #FFFFFF4D;
-$gray9: #4D525B;
-$gray10: #FAFAFA29;
-$gray11: #FFFFFF3D;
+$gray5: #ffffff1a;
+$gray6: #22272b;
+$gray7: #f6fbfd47;
+$gray8: #ffffff4d;
+$gray9: #4d525b;
+$gray10: #fafafa29;
+$gray11: #ffffff3d;
 $gray12: #475569;
-$gray13: #D1D5DB;
+$gray13: #d1d5db;
 
+$green: #4ade80;
+$green2: #9eff71;
+$green3: #24c38e;
+$green4: #a6ee43;
+$green5:  #5AD8CC;
 
-$green: #4ADE80;
-$green2: #9EFF71;
-$green3: #24C38E;
+$blue: #2563eb;
+$blue2: #7eb9ff;
+$blue3: #57bcff;
+$blue4: #3dadff;
 
+$primary: #0078d2;
 
+$blueviolet: #7c3aed;
+$blueviolet-light: #b4b9ff;
 
-$blue: #2563EB;
-$blue2: #7EB9FF;
-$blue3: #57BCFF;
+$red: #ff517c;
+$red2: #eb3333;
+$red3: #f73b3b;
+$red4: #fe4343;
 
-$primary: #0078D2;
+$black: #1c1c1c;
+$black2: #161a1d;
+$black3: #101213;
+$black4: #211D28;
 
-
-$blueviolet:  #7C3AED;
-$blueviolet-light: #B4B9FF;
-
-$red: #FF517C;
-$red2: #EB3333;
-$red3: #F73B3B;
-$red4: #FE4343;
-
-
-$black: #1C1C1C;
-$black2: #161A1D;
-
-
-$orange: #F38B01;
-
-
-
+$orange: #f38b01;
 
 $max-width-1920: 1920px;
 $max-width-1650: 1650px;
@@ -77,4 +72,3 @@ $max-width-991: 991px;
 $max-width-767: 767px;
 $max-width-576: 576px;
 $max-width-400: 400px;
-

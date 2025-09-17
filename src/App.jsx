@@ -23,14 +23,12 @@ import Conclusion from "./ADMIN/pages/conclusion/conclusion.jsx";
 import ConclusionStatus from "./ADMIN/pages/c-status/c-status.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import Integration from "./ADMIN/pages/integration/integration.jsx";
+import Exchange from "./WEBSITE/pages/exchange/exchange.jsx";
 
 function App() {
   const location = useLocation();
   const isAuth = Boolean(localStorage.getItem("user"));
 
-  useEffect(() => {
-    console.log(isAuth);
-  }, []);
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "auto";
@@ -45,6 +43,8 @@ function App() {
     { path: "*", element: <Home /> },
     { path: "/", element: <Home /> },
     { path: "/affiliate", element: <Affiliate /> },
+    { path: "/exchange", element: <Exchange /> ,hidenAuthentication:true },
+
     { path: "/signUp", element: <SiginUp />, hideHeader: true },
     { path: "/sigIn", element: <SiginIn />, hideHeader: true },
     { path: "/authentication", element: <Authentication />, hideHeader: true },
@@ -151,12 +151,18 @@ function App() {
   const currentRoute = routeConfig.find(
     (item) => item.path === location.pathname
   );
+
+
+  const hidenAuthentication = currentRoute?.hidenAuthentication || false;
+
+
   const hideHeader = currentRoute?.hideHeader || false;
   const visibleSidebar = currentRoute?.showSidebar || false;
 
   return (
     <div className="wrapper G-flex-column">
-      {!hideHeader && <Header />}
+    
+      {!hideHeader && <Header hidenAuthentication={hidenAuthentication}/>}
       <main className={visibleSidebar ? "admin-main" : ""}>
         {visibleSidebar && <Sidebar />}
         <div className={visibleSidebar ? "admin-wrapper" : ""}>

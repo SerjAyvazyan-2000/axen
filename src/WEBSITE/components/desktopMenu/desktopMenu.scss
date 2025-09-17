@@ -1,0 +1,193 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.d-menu-box {
+  background: variables.$black3;
+  max-width: 360px;
+  width: 100%;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  padding: 34px 32px;
+  z-index: 12;
+  transition: 0.4s;
+  min-height: 100%;
+
+  &.active {
+    left: 0;
+  }
+}
+
+.d-menu-header {
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.d-burger-close {
+  width: 30px;
+  flex: 0 0 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span,
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: variables.$white11;
+    border-radius: 3px;
+    transition: 0.3s ease;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &.active {
+    span {
+      opacity: 0;
+    }
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+  }
+
+  @include mixin.screen-max-width-991 {
+    display: flex;
+  }
+
+  &:hover {
+    span,
+    &::before,
+    &::after {
+      background: variables.$green;
+    }
+  }
+}
+
+.d-menu-items {
+  margin-top: 38px;
+  gap: 38px;
+}
+.d-menu-item {
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s;
+
+  &.active {
+    gap: 28px;
+    .d-item-sub-block {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .d-item-titles i {
+      transform: rotate(180deg);
+    }
+  }
+ 
+}
+
+.d-item-titles {
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+
+  p {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+      transition: all 0.4s;
+
+    color: variables.$white3;
+  }
+
+  i {
+    background: variables.$white14;
+    font-size: 12px;
+    transition: all 0.4s;
+  }
+
+   &:hover {
+    i{
+    background: variables.$green;
+
+    }
+    p{
+          color: variables.$green;
+
+    }
+  }
+}
+
+.d-item-sub-block {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+
+.d-sub-item {
+  gap: 8px;
+  transition: 0.4s;
+  i {
+    font-size: 20px;
+  }
+  .i-code-color {
+    background: variables.$green4;
+  }
+  .i-users-color {
+    background: variables.$blue4;
+  }
+  .i-exchange-color {
+    background: variables.$green5;
+  }
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: variables.$whiteOriginal;
+    opacity: 0.6;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      padding: 12px;
+      background: #58585833;
+      border-radius: 16px;
+    }
+  }
+
+  &.active {
+    padding: 12px;
+    background: #58585833;
+    border-radius: 16px;
+  }
+}

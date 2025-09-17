@@ -1,6 +1,7 @@
 @use "../../../assets/scss/mixin";
 @use "../../../assets/scss/variables";
 
+
 .exchange-dashboard-header {
   justify-content: space-between;
   width: 100%;
@@ -52,7 +53,7 @@
   }
 
   &:hover {
-    background: lighten(variables.$primary, 8%);
+    background: ligten(variables.$primary, 8%);
     transform: translateY(-2px);
 
     i {

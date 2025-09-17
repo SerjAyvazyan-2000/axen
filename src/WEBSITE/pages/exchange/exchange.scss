@@ -1,0 +1,306 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.e-hero-section {
+  margin-top: 170px;
+
+  @include mixin.screen-max-width-576 {
+    margin-top: 136px;
+  }
+}
+.e-hero-titles {
+  h2 {
+    color: variables.$whiteOriginal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 115%;
+    max-width: 527px;
+    width: 100%;
+
+    span {
+      font-weight: 700;
+
+      background: conic-gradient(
+        from 223.72deg at 50% 50%,
+        #cc81ff 0deg,
+        #5ed4ff 128.62deg,
+        #ffd445 265.3deg,
+        #cc81ff 360deg
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    @include mixin.screen-max-width-576 {
+      font-size: 40px;
+    }
+
+    b {
+      display: block;
+      background: linear-gradient(94.59deg, #f8fafc 0%, #cbd5e1 100%);
+      font-weight: 500;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+  p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: variables.$white2;
+    margin-top: 32px;
+
+    @include mixin.screen-max-width-576 {
+      margin-top: 12px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.e-hero-body {
+  gap: 40px;
+  justify-content: center;
+
+  @include mixin.screen-max-width-991 {
+    flex-direction: column;
+  }
+}
+
+.exchange-steps {
+  margin-top: 111px;
+  gap: 39px;
+  flex-wrap: wrap;
+
+  @include mixin.screen-max-width-576 {
+    margin-top: 101px;
+  }
+}
+.exchange-step {
+  max-width: 339px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .e-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+    color: variables.$white3;
+    border-radius: 17px;
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+  }
+  .blue-shadow {
+    background: #4d80ff5e;
+    box-shadow: 0px 4px 88.2px 0px #4d71ffbd;
+  }
+  .green-shadow {
+    background: #4dff745e;
+    box-shadow: 0px 4px 88.2px 0px #4dff62bd;
+  }
+  .brown-shadow {
+    background: #ff974d5e;
+    box-shadow: 0px 4px 88.2px 0px #ff974dbd;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+    margin-top: 37px;
+    color: variables.$white3;
+
+    @include mixin.screen-max-width-576 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+  }
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 20px;
+    color: #ffffff99;
+    @include mixin.screen-max-width-576 {
+      margin-top: 12px;
+      font-size: 17px;
+    }
+  }
+
+  @include mixin.screen-max-width-576 {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+.platform-section {
+  margin-top: 130px;
+
+  @include mixin.screen-max-width-576 {
+    margin-top: 48px;
+  }
+}
+
+.platform-items {
+  gap: 56px;
+
+  @include mixin.screen-max-width-576 {
+    gap: 48px;
+  }
+}
+
+.platform-item {
+  gap: 48px;
+  max-width: 1143px;
+  padding: 0 24px;
+  margin: 0 auto;
+  width: 100%;
+  @include mixin.screen-max-width-576 {
+    padding: 0 8px;
+  }
+
+  @include mixin.screen-max-width-991 {
+    flex-direction: column-reverse;
+  }
+
+  @include mixin.screen-max-width-576 {
+    gap: 24px;
+  }
+}
+.p-item-info {
+  max-width: 661px;
+  width: 100%;
+
+  @include mixin.screen-max-width-576 {
+    padding: 0 16px;
+  }
+}
+.p-item-titles {
+  h3 {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 48px;
+    color: variables.$whiteOriginal;
+
+    @include mixin.screen-max-width-576 {
+      font-size: 40px;
+    }
+  }
+  p {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 24px;
+    color: #ffffff99;
+
+    @include mixin.screen-max-width-576 {
+      font-size: 18px;
+      margin-top: 12px;
+    }
+  }
+}
+.p-item-descr {
+  margin-top: 48px;
+  gap: 32px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    i {
+      background: #4ade80;
+      font-size: 32px;
+      @include mixin.screen-max-width-576 {
+        font-size: 26px;
+      }
+    }
+    p {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+      color: #f3f3f3;
+      @include mixin.screen-max-width-576 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @include mixin.screen-max-width-576 {
+    gap: 26px;
+    margin-top: 26px;
+  }
+}
+
+.p-item-media {
+  max-width: 386px;
+  width: 100%;
+}
+.p-bg-wrapper {
+  background: variables.$black3;
+  padding: 24px 0;
+}
+.p-item-link {
+  gap: 10px;
+  margin-top: 40px;
+
+  span {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #4ade80;
+    @include mixin.screen-max-width-576 {
+      font-size: 20px;
+    }
+  }
+  i {
+    font-size: 16px;
+    background: #4ade80;
+     @include mixin.screen-max-width-576 {
+    font-size: 12px;
+  }
+  }
+  @include mixin.screen-max-width-576 {
+    margin-top: 20px;
+  }
+}
+.p-item-tags {
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 43px;
+
+    @include mixin.screen-max-width-576 {
+    margin-top: 20px;
+  }
+}
+.p-item-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  span {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 100%;
+    color: variables.$green;
+   
+  }
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$white3;
+  }
+}

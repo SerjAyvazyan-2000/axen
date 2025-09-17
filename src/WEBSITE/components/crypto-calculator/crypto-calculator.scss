@@ -1,0 +1,137 @@
+@use "../../../assets/scss/mixin";
+@use "../../../assets/scss/variables";
+
+.exchange-calculator-block {
+  max-width: 412px;
+  width: 100%;
+  position: relative;
+
+     @include mixin.screen-max-width-991 {
+        max-width: 100%;
+    }
+}
+
+.exchange-row {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  position: relative;
+  height: 52px;
+  background: #211d28;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.8px;
+    background: linear-gradient(
+      106.81deg,
+      rgba(202, 172, 255, 0.5) 0%,
+      rgba(126, 167, 255, 0.5) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+.exchange-token-btn {
+  max-width: 132px;
+  width: 100%;
+  background: #00000061;
+  backdrop-filter: blur(13px);
+  height: 100%;
+  position: relative;
+  z-index: -1;
+  padding: 14px 16px;
+  gap: 4px;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: variables.$white15;
+  }
+
+  i {
+    margin-left: auto;
+    font-size: 10px;
+    background: variables.$white15;
+  }
+}
+.exchange-col {
+  width: 100%;
+  padding: 4px 0 4px 16px;
+
+  input {
+    background: transparent;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #d2cddb;
+    width: 100%;
+  }
+}
+.exchange-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 4px;
+  color: variables.$white2;
+}
+.exchange-rate {
+  justify-content: space-between;
+  padding: 12px 0 12px 25px;
+  position: relative;
+  z-index: 2;
+
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: variables.$white11;
+
+    span {
+      display: block;
+    }
+  }
+}
+.exchange-rate-decor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  display: flex;
+
+    @include mixin.screen-max-width-576 {
+        img{
+          height: 64px;
+        }
+    }
+
+  
+}
+.compare-bg {
+  width: 32px;
+  height: 32px;
+  background: #6d73c538;
+  border-radius: 50%;
+  cursor: pointer;
+
+  i {
+    background: #b4b9ff;
+    font-size: 13px;
+  }
+}
+
+.exchange-btn{
+  margin-top: 24px;
+  
+  button{
+    width: 100%;
+    background: #237CD0; 
+  }
+}
