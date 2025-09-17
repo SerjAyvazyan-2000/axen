@@ -40,7 +40,7 @@ function App() {
 
   const routeConfig = [
     { path: "*", element: <Exchange /> },
-    { path: "/", element: <Exchange /> },
+    { path: "/", element: <Exchange /> ,hidenAuthentication: true},
     { path: "/api", element: <PageAPI/> },
     { path: "/affiliate", element: <Affiliate /> },
     { path: "/exchange", element: <Exchange />, hidenAuthentication: true },
