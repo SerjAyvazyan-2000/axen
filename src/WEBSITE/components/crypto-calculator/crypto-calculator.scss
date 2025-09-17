@@ -6,9 +6,9 @@
   width: 100%;
   position: relative;
 
-     @include mixin.screen-max-width-991 {
-        max-width: 100%;
-    }
+  @include mixin.screen-max-width-991 {
+    max-width: 100%;
+  }
 }
 
 .exchange-row {
@@ -92,13 +92,14 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: variables.$white11;
+    color: #fafafa;
 
     span {
       display: block;
     }
   }
 }
+
 .exchange-rate-decor {
   position: absolute;
   left: 0;
@@ -106,13 +107,11 @@
   z-index: -1;
   display: flex;
 
-    @include mixin.screen-max-width-576 {
-        img{
-          height: 64px;
-        }
+  @include mixin.screen-max-width-576 {
+    img {
+      height: 64px;
     }
-
-  
+  }
 }
 .compare-bg {
   width: 32px;
@@ -127,11 +126,11 @@
   }
 }
 
-.exchange-btn{
+.exchange-btn {
   margin-top: 24px;
-  
-  button{
+
+  button {
     width: 100%;
-    background: #237CD0; 
+    background: #237cd0;
   }
 }

@@ -1,5 +1,4 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./WEBSITE/pages/home/home.jsx";
 import Header from "./WEBSITE/components/header/header.jsx";
 import Footer from "./WEBSITE/components/footer/footer.jsx";
 import { useEffect } from "react";
@@ -24,11 +23,11 @@ import ConclusionStatus from "./ADMIN/pages/c-status/c-status.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import Integration from "./ADMIN/pages/integration/integration.jsx";
 import Exchange from "./WEBSITE/pages/exchange/exchange.jsx";
+import PageAPI from "./WEBSITE/pages/pageAPI/pageAPI.jsx";
 
 function App() {
   const location = useLocation();
   const isAuth = Boolean(localStorage.getItem("user"));
-
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "auto";
@@ -40,10 +39,11 @@ function App() {
   }, [location]);
 
   const routeConfig = [
-    { path: "*", element: <Home /> },
-    { path: "/", element: <Home /> },
+    { path: "*", element: <Exchange /> },
+    { path: "/", element: <Exchange /> },
+    { path: "/api", element: <PageAPI/> },
     { path: "/affiliate", element: <Affiliate /> },
-    { path: "/exchange", element: <Exchange /> ,hidenAuthentication:true },
+    { path: "/exchange", element: <Exchange />, hidenAuthentication: true },
 
     { path: "/signUp", element: <SiginUp />, hideHeader: true },
     { path: "/sigIn", element: <SiginIn />, hideHeader: true },
@@ -139,7 +139,7 @@ function App() {
       private: true,
     },
 
-        {
+    {
       path: "/integration",
       element: <Integration />,
       hideHeader: true,
@@ -152,17 +152,14 @@ function App() {
     (item) => item.path === location.pathname
   );
 
-
   const hidenAuthentication = currentRoute?.hidenAuthentication || false;
-
 
   const hideHeader = currentRoute?.hideHeader || false;
   const visibleSidebar = currentRoute?.showSidebar || false;
 
   return (
     <div className="wrapper G-flex-column">
-    
-      {!hideHeader && <Header hidenAuthentication={hidenAuthentication}/>}
+      {!hideHeader && <Header hidenAuthentication={hidenAuthentication} />}
       <main className={visibleSidebar ? "admin-main" : ""}>
         {visibleSidebar && <Sidebar />}
         <div className={visibleSidebar ? "admin-wrapper" : ""}>
@@ -180,7 +177,6 @@ function App() {
                 }
               />
             ))}
-
           </Routes>
         </div>
       </main>

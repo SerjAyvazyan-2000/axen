@@ -2,7 +2,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import "./desktopMenu.scss";
 import { useEffect, useRef, useState } from "react";
 
-const DesktopMenu = ({ setOpenDesktopMenu, openDesktopMenu }) => {
+const DesktopMenu = ({ setOpenDesktopMenu, openDesktopMenu, setActive }) => {
   const wrapRef = useRef(null);
   const location = useLocation();
  
@@ -34,9 +34,8 @@ const DesktopMenu = ({ setOpenDesktopMenu, openDesktopMenu }) => {
         {
           name: "API",
           icon: "icon-code",
-          href: "/home",
+          href: "/api",
           iconColor: "i-code-color",
-          alsoActive: ["/"],
         },
         {
           name: "Affiliate",
@@ -53,6 +52,8 @@ const DesktopMenu = ({ setOpenDesktopMenu, openDesktopMenu }) => {
           name: "Exchange a pair",
           icon: "icon-exchange",
           href: "/exchange",
+          alsoActive: ["/"],
+
           iconColor: "i-exchange-color",
         },
       ],
@@ -114,7 +115,7 @@ const DesktopMenu = ({ setOpenDesktopMenu, openDesktopMenu }) => {
                     <NavLink
                       to={element.href}
                       key={idx}
-                   
+                  
                       className={`d-sub-item G-align-center ${
                         isActive ? "active" : ""
                       } `}

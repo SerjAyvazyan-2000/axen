@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./home.scss";
+import "./pageAPI.scss";
 import Form from "../../components/form/form";
 import Button from "../../../ui/button/button";
 
-const Home = () => {
+const PageAPI = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
   const benefitsItems = [
@@ -412,4 +412,4 @@ const handleActiveFaq = (index) => {
   );
 };
 
-export default Home;
+export default PageAPI;

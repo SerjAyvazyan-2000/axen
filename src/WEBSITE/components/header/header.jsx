@@ -60,17 +60,21 @@ const Header = ({ hidenAuthentication }) => {
     } else {
       setActiveIndex(-1);
     }
+    handleChangeLan();
+    if (window.innerWidth <= 991) {
+      setActive(false);
+    }
   };
 
   const navitems = [
     {
       name: "Exchange",
       href: "exchange",
+      alsoActive: ["/"],
     },
     {
       name: "API",
-      href: "home",
-      alsoActive: ["/"],
+      href: "api",
     },
     {
       name: "Affiliate",
@@ -78,14 +82,14 @@ const Header = ({ hidenAuthentication }) => {
     },
   ];
 
-  const desktopMenuItems = [
+  const mobileMenuItems = [
     {
       title: "For business",
       elements: [
         {
           name: "API",
           icon: "icon-code",
-          href: "/home",
+          href: "/api",
           iconColor: "i-code-color",
         },
         {
@@ -104,6 +108,7 @@ const Header = ({ hidenAuthentication }) => {
           icon: "icon-exchange",
           href: "/exchange",
           iconColor: "i-exchange-color",
+          alsoActive: ["/"],
         },
       ],
     },
@@ -136,7 +141,7 @@ const Header = ({ hidenAuthentication }) => {
               <p>Menu</p>
             </div>
 
-            <Link className="header-logo G-flex" to={"/"}>
+            <Link onClick={()=>setActive(false)} className="header-logo G-flex" to={"/"}>
               <img src="/logo.svg" alt="logo" />
             </Link>
 
@@ -207,7 +212,7 @@ const Header = ({ hidenAuthentication }) => {
                 </ul>
 
                 <div className="d-menu-items G-flex-column mobile-menu-block">
-                  {desktopMenuItems.map((item, index) => {
+                  {mobileMenuItems.map((item, index) => {
                     return (
                       <div
                         key={index}
